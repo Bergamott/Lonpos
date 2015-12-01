@@ -150,7 +150,8 @@
             }
         }
         numPermutations[i] = unique;
-//        NSLog(@"Shape %d has %d permutations",i,unique);
+        for (int j=0;j<unique;j++)
+            NSLog(@"Shape %d permutation %d: %ld",i,j,shapes[i][j]);
     }
 }
 
@@ -236,6 +237,85 @@
 -(IBAction)solvePressed:(id)sender
 {
     waitScreen.hidden = FALSE;
+    
+    for (int i=0;i<11;i++)
+    {
+        sideMasks[i] = (1l << (i*5+5)) - 1l;
+    }
+    
+    int usedPieces = 0;
+    // Find which pieces have already been used
+    for (int i=0;i<5;i++)
+        for (int j=0;j<11;j++)
+            if (colors[i][j] >= 0 && colors[i][j] < 12)
+                usedPieces |= (1 << colors[i][j]);
+    
+    // Find white area
+    fullMask = LONG_MAX;
+    long whiteArea = 0;
+    for (int i=0;i<5;i++)
+        for (int j=0;j<11;j++)
+        {
+            if (colors[i][j] == 12)
+                whiteArea += (1l << (j*5+i));
+        }
+    
+    int piecesRemaining = 4095 - usedPieces;
+    if (whiteArea > 0)
+    {
+        NSLog(@"Has white: %ld",whiteArea);
+        long empty = fullMask - whiteArea;
+        if ([self fillHole:empty withPieces:piecesRemaining])
+            NSLog(@"Found a solution");
+    }
+    
+    waitScreen.hidden = TRUE;
+}
+
+-(BOOL)fillHole:(long)hl withPieces:(int)pc
+{
+    if (hl == fullMask)
+        return TRUE;
+    BOOL successful = FALSE;
+    int edge = 0;
+    while (edge < 11 && (hl & sideMasks[edge]) == sideMasks[edge])
+        edge++;
+    int pieceCount = 0;
+    while (pieceCount < 12 && !successful)
+    {
+        if (pc & (1 << pieceCount))
+        {
+            int reducedPieces = pc - (1 << pieceCount);
+            int permNum = numPermutations[pieceCount];
+            int permCount = 0;
+            while (permCount < permNum && !successful)
+            {
+                int w = shapeW[pieceCount][permCount];
+                int h = shapeH[pieceCount][permCount];
+                if (w+edge <= 11) // Is there room?
+                {
+                    long basePiece = shapes[pieceCount][permCount] << (5*edge);
+                    int vCount = 0;
+                    while (vCount + h <= 5 && !successful)
+                    {
+/*                        if (pc == 4095)
+                            NSLog(@"Checking piece %d with permutation %d at position %d edge %d, basePiece %ld",pieceCount,permCount,vCount,edge,basePiece);*/
+                        if ((basePiece & hl) == 0)
+                        {
+                            // Potential solution
+                            successful |= [self fillHole:hl+basePiece withPieces:reducedPieces];
+                        }
+                        vCount++;
+                        basePiece = basePiece << 1;
+                    }
+                }
+                permCount++;
+            }
+        }
+        pieceCount++;
+    }
+    
+    return successful;
 }
 
 

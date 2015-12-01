@@ -25,6 +25,9 @@
     IBOutlet UIImageView *outline;
     
     IBOutlet UIView *waitScreen;
+    
+    long sideMasks[11];
+    long fullMask;
 }
 
 -(void)calculateShapes;
@@ -37,6 +40,8 @@
 
 -(IBAction)clearPressed:(id)sender;
 -(IBAction)solvePressed:(id)sender;
+
+-(BOOL)fillHole:(long)hl withPieces:(int)pc;
 
 @end
 
