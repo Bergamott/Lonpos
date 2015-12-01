@@ -30,6 +30,7 @@
 		9A322D5F1C0DB0C500B517D6 /* outline.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A322D4E1C0DB0C500B517D6 /* outline.png */; };
 		9A322D601C0DB0C500B517D6 /* shadow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A322D4F1C0DB0C500B517D6 /* shadow.png */; };
 		9A322D611C0DB0C500B517D6 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A322D501C0DB0C500B517D6 /* white.png */; };
+		9A322D631C0DB46400B517D6 /* board.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A322D621C0DB46400B517D6 /* board.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		9A322D4E1C0DB0C500B517D6 /* outline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outline.png; sourceTree = "<group>"; };
 		9A322D4F1C0DB0C500B517D6 /* shadow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shadow.png; sourceTree = "<group>"; };
 		9A322D501C0DB0C500B517D6 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
+		9A322D621C0DB46400B517D6 /* board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = board.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		9A322D3F1C0DB0C500B517D6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9A322D621C0DB46400B517D6 /* board.png */,
 				9A322D401C0DB0C500B517D6 /* ball0.png */,
 				9A322D411C0DB0C500B517D6 /* ball1.png */,
 				9A322D421C0DB0C500B517D6 /* ball10.png */,
@@ -209,6 +212,7 @@
 				9A322D571C0DB0C500B517D6 /* ball4.png in Resources */,
 				9A322D331C0D9BED00B517D6 /* Main.storyboard in Resources */,
 				9A322D541C0DB0C500B517D6 /* ball11.png in Resources */,
+				9A322D631C0DB46400B517D6 /* board.png in Resources */,
 				9A322D5F1C0DB0C500B517D6 /* outline.png in Resources */,
 				9A322D5D1C0DB0C500B517D6 /* erase.png in Resources */,
 				9A322D591C0DB0C500B517D6 /* ball6.png in Resources */,
