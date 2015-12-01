@@ -28,6 +28,13 @@
     
     long sideMasks[11];
     long fullMask;
+    
+    int stagePiece[12];
+    int stageEdge[12];
+    int stagePermutation[12];
+    int stageShift[12];
+    
+    long remainingHole;
 }
 
 -(void)calculateShapes;
@@ -41,7 +48,8 @@
 -(IBAction)clearPressed:(id)sender;
 -(IBAction)solvePressed:(id)sender;
 
--(BOOL)fillHole:(long)hl withPieces:(int)pc;
+-(BOOL)fillHole:(long)hl withPieces:(int)pc onStage:(int)st;
+-(void)fillInFromStage:(int)st intoHole:(long)hl;
 
 @end
 

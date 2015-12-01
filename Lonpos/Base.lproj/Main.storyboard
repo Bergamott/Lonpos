@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -16,15 +16,18 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="board.png" id="8zf-iy-ox1">
                                 <rect key="frame" x="44" y="0.0" width="480" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                             </imageView>
                             <view contentMode="scaleToFill" id="n32-ZE-A8J" userLabel="Blob view">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="240"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="HlU-lT-Xrs">
                                 <rect key="frame" x="35" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball0.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="bsb-Ob-imV"/>
@@ -33,6 +36,7 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="TCb-j0-si8">
                                 <rect key="frame" x="77" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball1.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="YyX-uE-nqR"/>
@@ -41,6 +45,7 @@
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="8xF-Qh-xr1">
                                 <rect key="frame" x="119" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball2.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="4kA-cC-aJP"/>
@@ -49,6 +54,7 @@
                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KKA-TZ-6g2">
                                 <rect key="frame" x="161" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball3.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="QNc-fa-rlT"/>
@@ -57,6 +63,7 @@
                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="55q-um-bea">
                                 <rect key="frame" x="203" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball4.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="Uan-Gu-CnP"/>
@@ -65,6 +72,7 @@
                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="9pd-sX-8ls">
                                 <rect key="frame" x="245" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball5.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="XMV-Mw-PW8"/>
@@ -73,6 +81,7 @@
                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kX5-dJ-eKf">
                                 <rect key="frame" x="287" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball6.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="TCg-ej-ipi"/>
@@ -81,6 +90,7 @@
                             <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="CPz-f1-A5U">
                                 <rect key="frame" x="329" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball7.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="FKx-rb-198"/>
@@ -89,6 +99,7 @@
                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Msh-1R-vIj">
                                 <rect key="frame" x="370" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball8.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="87J-Lg-PuP"/>
@@ -97,6 +108,7 @@
                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="kxF-VL-TVF">
                                 <rect key="frame" x="412" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball9.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="Lfo-bd-Y6R"/>
@@ -105,6 +117,7 @@
                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="MzW-Vp-n10">
                                 <rect key="frame" x="453" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball10.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="mFO-dk-x71"/>
@@ -113,6 +126,7 @@
                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4pF-Hj-H67">
                                 <rect key="frame" x="494" y="240" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="ball11.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="4kj-Ws-QRU"/>
@@ -121,6 +135,7 @@
                             <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="KEd-J3-FPW">
                                 <rect key="frame" x="224" y="280" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="white.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="dki-Qf-lz5"/>
@@ -129,6 +144,7 @@
                             <button opaque="NO" tag="13" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ILc-fE-hna">
                                 <rect key="frame" x="266" y="280" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <state key="normal" image="erase.png"/>
                                 <connections>
                                     <action selector="ballButtonPressed:" destination="BYZ-38-t0r" eventType="touchDown" id="LXT-aG-bee"/>
@@ -137,10 +153,12 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="outline.png" id="VgM-0Y-LRi">
                                 <rect key="frame" x="33" y="238" width="44" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6XE-Ju-FEM">
-                                <rect key="frame" x="344" y="285" width="55" height="30"/>
+                                <rect key="frame" x="331" y="285" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Lös">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,8 +168,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="YOW-Ps-pjw">
-                                <rect key="frame" x="424" y="285" width="69" height="30"/>
+                                <rect key="frame" x="431" y="285" width="69" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Rensa">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -167,11 +186,14 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" id="wlR-bd-Ohh">
                                         <rect key="frame" x="266" y="141" width="37" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <animations/>
                                     </activityIndicatorView>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

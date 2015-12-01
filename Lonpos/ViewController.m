@@ -150,8 +150,8 @@
             }
         }
         numPermutations[i] = unique;
-        for (int j=0;j<unique;j++)
-            NSLog(@"Shape %d permutation %d: %ld",i,j,shapes[i][j]);
+//        for (int j=0;j<unique;j++)
+//            NSLog(@"Shape %d permutation %d: %ld",i,j,shapes[i][j]);
     }
 }
 
@@ -215,17 +215,17 @@
     if (selectedButton < 12)
     {
         [but setImage:[UIImage imageNamed:[NSString stringWithFormat:@"ball%d.png",selectedButton]] forState:UIControlStateNormal];
-        colors[sb.tag/5][sb.tag%5] = selectedButton;
+        colors[sb.tag%5][sb.tag/5] = selectedButton;
     }
     else if (selectedButton == 12)
     {
         [but setImage:white forState:UIControlStateNormal];
-        colors[sb.tag/5][sb.tag%5] = 12;
+        colors[sb.tag%5][sb.tag/5] = 12;
     }
     else
     {
         [but setImage:hole forState:UIControlStateNormal];
-        colors[sb.tag/5][sb.tag%5] = -1;
+        colors[sb.tag%5][sb.tag/5] = -1;
     }
 }
 
@@ -260,22 +260,57 @@
                 whiteArea += (1l << (j*5+i));
         }
     
+    // Find remaining empty area
+    long restArea = 0;
+    for (int i=0;i<5;i++)
+        for (int j=0;j<11;j++)
+        {
+            if (colors[i][j] == -1)
+                restArea += (1l << (j*5+i));
+        }
+    remainingHole = fullMask - restArea;
+
     int piecesRemaining = 4095 - usedPieces;
-    if (whiteArea > 0)
+
+    long empty = fullMask - whiteArea;
+    if ([self fillHole:empty withPieces:piecesRemaining onStage:0])
     {
-        NSLog(@"Has white: %ld",whiteArea);
-        long empty = fullMask - whiteArea;
-        if ([self fillHole:empty withPieces:piecesRemaining])
-            NSLog(@"Found a solution");
+        NSLog(@"Found a solution");
+        [self fillInFromStage:0 intoHole:empty-restArea];
     }
     
     waitScreen.hidden = TRUE;
 }
 
--(BOOL)fillHole:(long)hl withPieces:(int)pc
+-(void)fillInFromStage:(int)st intoHole:(long)hl
+{
+    int stageCount = st;
+    long holeHolder = hl;
+    while (holeHolder != fullMask)
+    {
+        long piece = shapes[stagePiece[stageCount]][stagePermutation[stageCount]] << (5*stageEdge[stageCount]+stageShift[stageCount]);
+        for (int i=0;i<5;i++)
+            for (int j=0;j<11;j++)
+                if (piece & (1l << (5*j+i)))
+                {
+                    UIButton *but = [blobs objectAtIndex:j*5+i];
+                    [but setImage:[UIImage imageNamed:[NSString stringWithFormat:@"ball%d.png",stagePiece[stageCount]]] forState:UIControlStateNormal];
+                }
+        
+        holeHolder |= piece;
+        stageCount++;
+    }
+}
+
+-(BOOL)fillHole:(long)hl withPieces:(int)pc onStage:(int)st
 {
     if (hl == fullMask)
-        return TRUE;
+    {
+        if (pc == 0)
+            return TRUE;
+        else
+            return [self fillHole:remainingHole withPieces:pc onStage:st];
+    }
     BOOL successful = FALSE;
     int edge = 0;
     while (edge < 11 && (hl & sideMasks[edge]) == sideMasks[edge])
@@ -298,12 +333,14 @@
                     int vCount = 0;
                     while (vCount + h <= 5 && !successful)
                     {
-/*                        if (pc == 4095)
-                            NSLog(@"Checking piece %d with permutation %d at position %d edge %d, basePiece %ld",pieceCount,permCount,vCount,edge,basePiece);*/
                         if ((basePiece & hl) == 0)
                         {
                             // Potential solution
-                            successful |= [self fillHole:hl+basePiece withPieces:reducedPieces];
+                            stagePiece[st] = pieceCount;
+                            stagePermutation[st] = permCount;
+                            stageShift[st] = vCount;
+                            stageEdge[st] = edge;
+                            successful |= [self fillHole:hl+basePiece withPieces:reducedPieces onStage:st+1];
                         }
                         vCount++;
                         basePiece = basePiece << 1;
